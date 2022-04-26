@@ -21,7 +21,6 @@ const createCollege= async function(req,res){
             res.status(400).send({status:false,message:'name is missing!'})
             return
         }
-        
         if(!isValid(fullName)){
             res.status(400).send({status:false,message:'full name is missing!'})
             return
@@ -37,11 +36,6 @@ const createCollege= async function(req,res){
 
         const newCollege=await collegeModel.create(collegeData)
         res.status(201).send({status:true,message:"college created succesfully",data:newCollege})
-
-
-
-
-
 
     }catch (error) {
         res.status(500).json({status:false, error:error.message})

@@ -88,8 +88,6 @@ const getInterns=async function(req,res){
         }
         
         res.status(201).send({status:true,message:"success",data:obj})
-        
-
 
     }catch (error) {
         res.status(500).json({status:false, error:error.message})
